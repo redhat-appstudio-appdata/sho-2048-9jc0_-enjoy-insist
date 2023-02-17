@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: comp-2048-htla
+  namespace: showeimer-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:fcacba99925a3676654d12a762532c4152bfaef7a609892d8cbf689c6348bea6
+        name: my-nodejs
+        resources: {}
+status: {}
