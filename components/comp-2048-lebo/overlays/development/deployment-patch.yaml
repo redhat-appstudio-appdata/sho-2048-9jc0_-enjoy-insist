@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: comp-2048-lebo
+  namespace: showeimer-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:9975edfd068b9bc539acd8126e6ea826e3da1e0db3b186726c1d5ad7cd160ecb
+        name: my-nodejs
+        resources: {}
+status: {}
