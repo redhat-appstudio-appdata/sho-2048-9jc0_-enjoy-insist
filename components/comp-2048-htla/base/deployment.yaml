@@ -25,7 +25,7 @@ spec:
         app.kubernetes.io/instance: comp-2048-htla
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:9jc0_-comp-2048-htla
+      - image: quay.io/redhat-appstudio/user-workload@sha256:fcacba99925a3676654d12a762532c4152bfaef7a609892d8cbf689c6348bea6
         name: my-nodejs
         ports:
         - containerPort: 3001
