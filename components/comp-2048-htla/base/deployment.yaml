@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: comp-2048-htla
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: comp-2048-htla
+    app.kubernetes.io/part-of: sho-2048
+  name: comp-2048-htla
+  namespace: showeimer-tenant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs-app
+      app.kubernetes.io/instance: comp-2048-htla
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nodejs-app
+        app.kubernetes.io/instance: comp-2048-htla
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload:9jc0_-comp-2048-htla
+        name: my-nodejs
+        ports:
+        - containerPort: 3001
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 100Mi
+          requests:
+            cpu: 10m
+            memory: 50Mi
+status: {}

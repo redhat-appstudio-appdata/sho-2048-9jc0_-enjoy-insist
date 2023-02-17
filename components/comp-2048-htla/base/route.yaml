@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: comp-2048-htla
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: comp-2048-htla
+    app.kubernetes.io/part-of: sho-2048
+  name: comp-2048-htla
+  namespace: showeimer-tenant
+spec:
+  path: /
+  port:
+    targetPort: 3001
+  to:
+    kind: Service
+    name: comp-2048-htla
+    weight: null
+status: {}
