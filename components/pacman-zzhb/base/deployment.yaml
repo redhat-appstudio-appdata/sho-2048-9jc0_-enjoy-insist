@@ -25,7 +25,7 @@ spec:
         app.kubernetes.io/instance: pacman-zzhb
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:9jc0_-pacman-zzhb
+      - image: quay.io/redhat-appstudio/user-workload@sha256:b274c78e0e056ad142b346ca01ba97e246049c57045b94e422de9b98575a93c8
         name: my-nodejs
         ports:
         - containerPort: 3001
